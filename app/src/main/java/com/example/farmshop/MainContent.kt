@@ -48,7 +48,7 @@ fun CartScreen(vm: AppViewModel) {
                     Row(Modifier.padding(20.dp).fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                         Text(NumberFormat.getCurrencyInstance(Locale("id","ID")).format(vm.calculateTotalPrice()), color = FarmText, fontWeight = FontWeight.Bold, fontSize = 18.sp)
                         Button(onClick = {
-                            val phone = "6281234567890"
+                            val phone = "6285173342484"
                             var msg = "Halo, saya mau pesan:\n"
                             items.forEach { msg += "- ${it.name} (${it.quantity}x)\n" }
                             msg += "\nTotal: ${NumberFormat.getCurrencyInstance(Locale("id","ID")).format(vm.calculateTotalPrice())}"

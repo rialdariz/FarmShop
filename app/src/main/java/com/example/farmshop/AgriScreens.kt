@@ -38,6 +38,7 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import java.text.NumberFormat
 import java.util.Locale
+import java.net.URLEncoder
 
 // --- PALET WARNA FARM ---
 val FarmGreen = Color(0xFF2E7D32)     // Hijau Tua (Daun)
@@ -262,7 +263,27 @@ fun DetailScreen(navController: NavController, viewModel: AppViewModel, productI
                     ) { Text("+ Keranjang", color = FarmGreen) }
 
                     Button(
-                        onClick = { /* Logic WA */ },
+                        onClick = {
+                            val phoneNumber = "6281234567890" // GANTI DENGAN NOMOR HP ANDA
+
+                            // 2. Buat Pesan Otomatis
+                            val message = "Halo Admin AgriStore 👋,\n" +
+                                    "Saya tertarik membeli produk:\n\n" +
+                                    "🌾 *${product.name}*\n" +
+                                    "💰 Harga: ${formatRupiah(product.price)}\n\n" +
+                                    "Apakah stok masih tersedia?"
+
+                            // 3. Encode pesan agar bisa dibaca URL & Buka WhatsApp
+                            try {
+                                val url = "https://api.whatsapp.com/send?phone=$phoneNumber&text=${URLEncoder.encode(message, "UTF-8")}"
+                                val intent = Intent(Intent.ACTION_VIEW).apply {
+                                    data = Uri.parse(url)
+                                }
+                                context.startActivity(intent)
+                            } catch (e: Exception) {
+                                Toast.makeText(context, "WhatsApp tidak terinstall atau terjadi kesalahan.", Toast.LENGTH_SHORT).show()
+                            }
+                        },
                         modifier = Modifier.weight(1f).height(50.dp),
                         colors = ButtonDefaults.buttonColors(containerColor = FarmGreen)
                     ) { Text("Beli (WA)", color = Color.White) }
