@@ -264,7 +264,7 @@ fun DetailScreen(navController: NavController, viewModel: AppViewModel, productI
 
                     Button(
                         onClick = {
-                            val phoneNumber = "6281234567890" // GANTI DENGAN NOMOR HP ANDA
+                            val phoneNumber = "6285173342484" // GANTI DENGAN NOMOR HP ANDA
 
                             // 2. Buat Pesan Otomatis
                             val message = "Halo Admin AgriStore 👋,\n" +
