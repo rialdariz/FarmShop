@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "318838496523",
+    "project_id": "my-app-41475",
+    "storage_bucket": "my-app-41475.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318838496523:android:ebc1ecf5aef49e612e560e",
+        "android_client_info": {
+          "package_name": "com.example.farmshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATSc9YKwNUw3JtvUJRT78CeAk3u0bX0XE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
